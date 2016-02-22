@@ -6,21 +6,21 @@
  * strings, numbers, boolean, null, undefined
  *
  * objects:
- * Date, String, Arrays, RegExp, Boolean, Number
+ * Date, String, Arrays, RegExp, Boolean, Number, Function
  *
  * They differs on how they works in code:
  * Primitives - by value
  * Object - by link
  */
 
-function changeMessage(messageToChange) {
-    messageToChange = 'I change message';
+function changeMessage(message) {
+    message += 'I change message';
 }
 
 var message = 'test string';
 
 console.log('Message is = ', message);
-changeMessage(message);
+message = changeMessage(message);
 console.log('Message is = ', message);
 
 
@@ -38,3 +38,10 @@ var square = {
 console.log('Square area is = ', square.getArea());
 changeSize(square, 25);
 console.log('square area is = ', square.getArea());
+
+var str = new String('test string');
+
+"test".toLowerCase();
+
+var t = "TEST\" ";
+var t = 'TEST\' ';

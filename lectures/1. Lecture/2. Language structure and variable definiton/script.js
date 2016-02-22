@@ -1,5 +1,5 @@
 /**
- * Here is multi line comment
+  Here is multi line comment
  */
 
 var a = 1 + 2; // Single line comment
@@ -111,7 +111,7 @@ z = {   // become object
  */
 var a = 1,
     b = 2,
-    c = 3 + 5;
+    c = a + b;
 
 
 /**
