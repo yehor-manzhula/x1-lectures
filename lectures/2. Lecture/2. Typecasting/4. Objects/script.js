@@ -1,46 +1,66 @@
-console.log('\nBOOLEANS');
+console.log('\nOBJECTS');
 
 /**
- * Boolean
+ * Objects
  */
-var firstBoolean = false,
-    secondBoolean = true;
+var firstObject = {};
+var secondObject = {};
+
+console.log('Sum objects', firstObject + secondObject);
+
+console.log('Subtract objects', firstObject - secondObject);
+
+console.log('Multiply objects', firstObject * secondObject);
+
+console.log('Divide objects', firstObject / secondObject);
+
+console.log('Modulus objects', firstObject % secondObject);
+
+console.log('Greater than', firstObject > secondObject);
+
+console.log('Less than boolean', firstObject < secondObject);
+
+console.log('Greater than or equal', firstObject >= secondObject);
+
+console.log('Less than  or equal', firstObject <= secondObject);
+
+console.log('\n');
 
 /**
- * In that case boolean will cast to numbers
- * where
- * false - 0
- * true - 1
+ * Objects
  */
-var sumBoolean = firstBoolean + secondBoolean;
-console.log('Sum boolean', sumBoolean);
+firstObject = {
+    valueOf: function() {
+        return 10;
+    },
+    toString: function() {
+        return 'firstObject'
+    }
+};
 
-/**
- * In that case boolean will cast to numbers
- * where
- * false - 0
- * true - 1
- */
-var subtractBoolean = firstBoolean - secondBoolean;
-console.log('Subtract boolean', subtractBoolean);
+secondObject = {
+    valueOf: function() {
+        return 2;
+    },
+    toString: function() {
+        return 'secondObject'
+    }
+};
 
-/**
- * In that case boolean will cast to numbers
- * where
- * false - 0
- * true - 1
- */
-var multiplyBoolean = firstBoolean * secondBoolean;
-console.log('Multiply boolean', multiplyBoolean);
+console.log('Sum objects', firstObject + secondObject);
 
-/**
- * In that case boolean will cast to numbers
- * where
- * false - 0
- * true - 1
- */
-var divideBoolean = firstBoolean / secondBoolean;
-console.log('Divide boolean', divideBoolean);
+console.log('Subtract objects', firstObject - secondObject);
 
-var modulusBoolean = firstBoolean % secondBoolean;
-console.log('Modulus boolean', modulusBoolean);
+console.log('Multiply objects', firstObject * secondObject);
+
+console.log('Divide objects', firstObject / secondObject);
+
+console.log('Modulus objects', firstObject % secondObject);
+
+console.log('Greater than', firstObject > secondObject);
+
+console.log('Less than boolean', firstObject < secondObject);
+
+console.log('Greater than or equal', firstObject >= secondObject);
+
+console.log('Less than  or equal', firstObject <= secondObject);

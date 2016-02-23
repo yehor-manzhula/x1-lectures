@@ -1,182 +1,31 @@
 console.log('\nSTRINGS');
-
 /**
  * Strings
  */
 var firstString  = "Hello ",
     secondString = 'world';
 
+console.log('\nSTRINGS IN NUMERICAL CONTEXT');
 /**
  * Operator + will concat strings
  */
-var sumStrings = firstString + secondString;
-console.log('sumStrings', sumStrings);
+console.log('Sum strings = ', firstString + secondString);
 
 /**
  * Other arithmetical operators will produce NaN
  */
-var subtractString = firstString - secondString;
-console.log('subtractString', subtractString);
+console.log('Subtract strings = ', firstString - secondString);
 
-var multiplyStrings = firstString * secondString;
-console.log('multiplyStrings', multiplyStrings);
+console.log('Multiply strings = ', firstString * secondString);
 
-var divideStrings = firstString / secondString;
-console.log('divideStrings', divideStrings );
+console.log('Divide strings = ',  firstString / secondString);
 
-var modulusStrings = firstString % secondString;
-console.log('modulusStrings', modulusStrings);
+console.log('Modulus strings = ', firstString % secondString);
 
+console.log('Greater than two strings = ',  firstString > secondString);
 
-console.log('\nNUMBERS');
+console.log('Less than two strings = ', firstString < secondString);
 
-/**
- * Numbers
- */
-var firstNumber = 5,
-    secondNumber = 10;
+console.log('Greater than or equal two strings = ', '811' >= '812'); // Compare by charcode
 
-var sumNumbers = firstNumber + secondNumber;
-console.log('sumNumbers', sumNumbers);
-
-var subtractNumbers = firstNumber - secondNumber;
-console.log('subtractNumbers', subtractNumbers);
-
-var multiplyNumbers = firstNumber * secondNumber;
-console.log('multiplyNumbers', multiplyNumbers);
-
-var divideNumbers = firstNumber / secondNumber;
-console.log('divideNumbers', divideNumbers);
-
-var modulusNumbers = firstNumber % secondNumber;
-console.log('modulusNumbers', modulusNumbers);
-
-
-console.log('\nBOOLEANS');
-
-/**
- * Boolean
- */
-var firstBoolean = false,
-    secondBoolean = true;
-
-/**
- * In that case boolean will cast to numbers
- * where
- * false - 0
- * true - 1
- */
-var sumBoolean = firstBoolean + secondBoolean;
-console.log('sumBoolean', sumBoolean);
-
-/**
- * In that case boolean will cast to numbers
- * where
- * false - 0
- * true - 1
- */
-var subtractBoolean = firstBoolean - secondBoolean;
-console.log('subtractBoolean', subtractBoolean);
-
-/**
- * In that case boolean will cast to numbers
- * where
- * false - 0
- * true - 1
- */
-var multiplyBoolean = firstBoolean * secondBoolean;
-console.log('multiplyBoolean', multiplyBoolean);
-
-/**
- * In that case boolean will cast to numbers
- * where
- * false - 0
- * true - 1
- */
-var divideBoolean = firstBoolean / secondBoolean;
-console.log('divideBoolean', divideBoolean);
-
-var modulusBoolean = firstBoolean % secondBoolean;
-console.log('modulusBoolean', modulusBoolean);
-
-console.log('\nSTRINGS AND NUMBERS');
-
-/**
- * Strings and numbers
- */
-var string = 'test',
-    numberOne = 5,
-    numberTwo = 10,
-    sum;
-
-sum = string + numberOne + numberTwo;
-console.log('Sum when string first', sum);
-
-sum = numberOne + numberTwo + string;
-console.log('Sum when number first', sum);
-
-sum = numberOne + string + numberTwo;
-console.log('Sum number string number', sum);
-
-
-console.log('\nSTRINGS AND BOOLEANS');
-
-/**
- * Strings and booleans
- */
-var string = 'TEST',
-    booleanOne = true,
-    booleanTwo = false,
-    sum;
-
-/**
- * All of them will be casted to string
- */
-sum = string + booleanOne + booleanTwo;
-console.log('Sum when string first', sum);
-
-/**
- * First of them will be casted to number
- * and then to string
- */
-sum = booleanOne + booleanTwo + string;
-console.log('Sum when number first', sum);
-
-/**
- * All of them will be casted to string
- */
-sum = booleanOne + string + booleanTwo;
-console.log('Sum number string number', sum);
-
-console.log('\nNUMBERS AND BOOLEANS');
-
-/**
- * Numbers and booleans
- */
-var number = 100,
-    booleanOne = true,
-    booleanTwo = false,
-    sum;
-
-/**
- * All of them will be casted to string
- */
-sum = number + booleanOne + booleanTwo;
-console.log('Sum when string first', sum);
-
-/**
- * First of them will be casted to number
- * and then to string
- */
-sum = booleanOne + booleanTwo + number;
-console.log('Sum when number first', sum);
-
-/**
- * All of them will be casted to string
- */
-sum = booleanOne + number + booleanTwo;
-console.log('Sum number string number', sum);
-
-/**
- * TODO: Add objects
- */
+console.log('Less than or equal two strings = ', '811' <= '812'); // Compare by charcode

@@ -1,182 +1,167 @@
-console.log('\nSTRINGS');
-
 /**
- * Strings
+ * There are few varians to force javascript
+ * to cast type
  */
-var firstString  = "Hello ",
-    secondString = 'world';
 
 /**
- * Operator + will concat strings
+ * Cast anything to string
  */
-var sumStrings = firstString + secondString;
-console.log('sumStrings', sumStrings);
+var number = 1,
+    nubmerTostring = '' + number;
+
+var boolean = true,
+    booleanTostring = '' + boolean;
 
 /**
- * Other arethmetical operators will produce NaN
- */
-var subtractString = firstString - secondString;
-console.log('subtractString', subtractString);
-
-var multiplyStrings = firstString * secondString;
-console.log('multiplyStrings', multiplyStrings);
-
-var divideStrings = firstString / secondString;
-console.log('divideStrings', divideStrings );
-
-var modulusStrings = firstString % secondString;
-console.log('modulusStrings', modulusStrings);
-
-
-console.log('\nNUMBERS');
-
-/**
- * Numbers
- */
-var firstNumber = 5,
-    secondNumber = 10;
-
-var sumNumbers = firstNumber + secondNumber;
-console.log('sumNumbers', sumNumbers);
-
-var subtractNumbers = firstNumber - secondNumber;
-console.log('subtractNumbers', subtractNumbers);
-
-var multiplyNumbers = firstNumber * secondNumber;
-console.log('multiplyNumbers', multiplyNumbers);
-
-var divideNumbers = firstNumber / secondNumber;
-console.log('divideNumbers', divideNumbers);
-
-var modulusNumbers = firstNumber % secondNumber;
-console.log('modulusNumbers', modulusNumbers);
-
-
-console.log('\nBOOLEANS');
-
-/**
- * Boolean
- */
-var firstBoolean = false,
-    secondBoolean = true;
-
-/**
- * In that case boolean will cast to numbers
- * where
- * false - 0
- * true - 1
- */
-var sumBoolean = firstBoolean + secondBoolean;
-console.log('sumBoolean', sumBoolean);
-
-/**
- * In that case boolean will cast to numbers
- * where
- * false - 0
- * true - 1
- */
-var subtractBoolean = firstBoolean - secondBoolean;
-console.log('subtractBoolean', subtractBoolean);
-
-/**
- * In that case boolean will cast to numbers
- * where
- * false - 0
- * true - 1
- */
-var multiplyBoolean = firstBoolean * secondBoolean;
-console.log('multiplyBoolean', multiplyBoolean);
-
-/**
- * In that case boolean will cast to numbers
- * where
- * false - 0
- * true - 1
- */
-var divideBoolean = firstBoolean / secondBoolean;
-console.log('divideBoolean', divideBoolean);
-
-var modulusBoolean = firstBoolean % secondBoolean;
-console.log('modulusBoolean', modulusBoolean);
-
-console.log('\nSTRINGS AND NUMBERS');
-
-/**
- * Strings and numbers
+ * Cast string to boolean
+ * in logical context empty string is false
+ * not empty string is true
  */
 var string = 'test',
-    numberOne = 5,
-    numberTwo = 10,
-    sum;
+    stringToBolean = !!string; // true
 
-sum = string + numberOne + numberTwo;
-console.log('Sum when string first', sum);
-
-sum = numberOne + numberTwo + string;
-console.log('Sum when number first', sum);
-
-sum = numberOne + string + numberTwo;
-console.log('Sum number string number', sum);
-
-
-console.log('\nSTRINGS AND BOLEANS');
+string = '';
+stringToBolean = !!string; // false
 
 /**
- * Strings and booleans
+ * Cast number to boolean
+ * in logical context only 0 is false
+ * any other number, event negative number is true
  */
-var string = 'TEST',
-    booleanOne = true,
-    booleanTwo = false,
-    sum;
+/**
+ * False will be
+ *
+ * false
+ * null
+ * undefined
+ * ''
+ * 0
+ * Number.NaN
+ *
+ * True All the rest will be true
+ * '0'
+ * 'false'
+ */
+var number = 5,
+    numberToBoolean = !!number; // true
+
+number = -100500;
+numberToBoolean = !!number; // true
+
+number = 0;
+numberToBoolean = !!number; // false
 
 /**
- * All of them will be casted to string
+ *  Cast boolean to number
+ *  in numerical context
+ *  true = 1
+ *  false = 0
  */
-sum = string + booleanOne + booleanTwo;
-console.log('Sum when string first', sum);
+var boolean = false,
+    number = 10;
+
+var result = number + boolean; // 10 - the same as 10 + 0
+
+
+boolean = true,
+    number = 10;
+
+result = number + boolean; // 11 - the same as 10 + 1
 
 /**
- * First of them will be casted to number
- * and then to string
+ * String to number
  */
-sum = booleanOne + booleanTwo + string;
-console.log('Sum when number first', sum);
+var string = '5',
+    number = parseInt(string); // 5 as a number
+
+string = '6.1';
+number = parseFloat(string); // 6.1 as a number
+
+
+string = 'test 5';
+number = parseInt(string); // NaN javascript doesnt search numbers in strings
+
+string = '5 testString';
+number = parseFloat(string); // NaN javascript doesnt search numbers in strings /**
+* There are few varians to force javascript
+* to cast type
+*/
 
 /**
- * All of them will be casted to string
+ * Cast anything to string
  */
-sum = booleanOne + string + booleanTwo;
-console.log('Sum number string number', sum);
+var number = 1,
+    nubmerTostring = '' + number;
 
-console.log('\nNUMBERS AND BOLEANS');
-
-/**
- * Numbers and booleans
- */
-var number = 100,
-    booleanOne = true,
-    booleanTwo = false,
-    sum;
+var boolean = true,
+    booleanTostring = '' + boolean;
 
 /**
- * All of them will be casted to string
+ * Cast string to boolean
+ * in logical context empty string is false
+ * not empty string is true
  */
-sum = number + booleanOne + booleanTwo;
-console.log('Sum when string first', sum);
+var string = 'test',
+    stringToBolean = !!string; // true
+
+string = '';
+stringToBolean = !!string; // false
 
 /**
- * First of them will be casted to number
- * and then to string
+ * Cast number to boolean
+ * in logical context only 0 is false
+ * any other number, event negative number is true
  */
-sum = booleanOne + booleanTwo + number;
-console.log('Sum when number first', sum);
+/**
+ * False will be
+ *
+ * false
+ * null
+ * undefined
+ * ''
+ * 0
+ * Number.NaN
+ *
+ * True All the rest will be true
+ * '0'
+ * 'false'
+ */
+var number = 5,
+    numberToBoolean = !!number; // true
+
+number = -100500;
+numberToBoolean = !!number; // true
+
+number = 0;
+numberToBoolean = !!number; // false
 
 /**
- * All of them will be casted to string
+ *  Cast boolean to number
+ *  in numerical context
+ *  true = 1
+ *  false = 0
  */
-sum = booleanOne + number + booleanTwo;
-console.log('Sum number string number', sum);
+var boolean = false,
+    number = 10;
+
+var result = number + boolean; // 10 - the same as 10 + 0
+
+boolean = true,
+    number = 10;
+
+result = number + boolean; // 11 - the same as 10 + 1
 
 /**
- * TODO: add objects
+ * String to number
  */
+var string = '5',
+    number = parseInt(string); // 5 as a number or new Number(string)
+
+string = '6.1';
+number = parseFloat(string); // 6.1 as a number or new Number(string)
+
+string = 'test 5';
+number = parseInt(string); // NaN javascript doesnt search numbers in strings or new Number(string)
+
+string = '5 testString';
+number = parseFloat(string); // 5

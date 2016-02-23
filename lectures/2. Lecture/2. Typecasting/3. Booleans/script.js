@@ -1,23 +1,31 @@
-console.log('\nNUMBERS');
+console.log('\nBOOLEANS');
 
 /**
- * Numbers
+ * Boolean
  */
-var firstNumber = 5,
-    secondNumber = 10;
+var firstBoolean = false,
+    secondBoolean = true;
 
-var sumNumbers = firstNumber + secondNumber;
-console.log('sumNumbers', sumNumbers);
+/**
+ * Boolean will cast to numbers in number context
+ * where
+ * false - 0
+ * true - 1
+ */
+console.log('Sum boolean', firstBoolean + secondBoolean);
 
-var subtractNumbers = firstNumber - secondNumber;
-console.log('subtractNumbers', subtractNumbers);
+console.log('Subtract boolean', firstBoolean - secondBoolean);
 
-var multiplyNumbers = firstNumber * secondNumber;
-console.log('multiplyNumbers', multiplyNumbers);
+console.log('Multiply boolean', firstBoolean * secondBoolean);
 
-var divideNumbers = firstNumber / secondNumber;
-console.log('divideNumbers', divideNumbers);
+console.log('Divide boolean',  firstBoolean / secondBoolean);
 
-var modulusNumbers = firstNumber % secondNumber;
-console.log('modulusNumbers', modulusNumbers);
+console.log('Modulus boolean', firstBoolean % secondBoolean);
 
+console.log('Greater than', firstBoolean > secondBoolean);
+
+console.log('Less than boolean', firstBoolean < secondBoolean);
+
+console.log('Greater than or equal', firstBoolean >= secondBoolean);
+
+console.log('Less than  or equal', firstBoolean <= secondBoolean);
