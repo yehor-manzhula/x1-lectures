@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/egor-manjula/x1-lectures#readme",
   "devDependencies": {
+    "gulp": "^3.9.1",
     "gulp-serve": "^1.2.0",
     "gulp-webserver": "^0.9.1"
   }
