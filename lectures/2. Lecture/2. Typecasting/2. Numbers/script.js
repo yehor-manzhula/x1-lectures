@@ -1,63 +1,40 @@
-console.log('\nSTRINGS');
-/**
- * Strings
- */
-var firstString  = "Hello ",
-    secondString = 'world';
-
-console.log('\nSTRINGS IN NUMERICAL CONTEXT');
-/**
- * Operator + will concat strings
- */
-var sumStrings = firstString + secondString;
-console.log('sum strings = ', sumStrings);
+console.log('\nNUMBERS');
 
 /**
- * Other arithmetical operators will produce NaN
+ * Numbers
  */
-var subtractString = firstString - secondString;
-console.log('subtract strings = ', subtractString);
+var firstNumber = 5,
+    secondNumber = 10;
 
-var multiplyStrings = firstString * secondString;
-console.log('multiply strings = ', multiplyStrings);
+console.log('Sum Numbers', firstNumber + secondNumber);
 
-var divideStrings = firstString / secondString;
-console.log('divide strings = ', divideStrings );
+console.log('Subtract Numbers', firstNumber - secondNumber);
 
-var modulusStrings = firstString % secondString;
-console.log('modulus strings = ', modulusStrings);
+console.log('Multiply Numbers', firstNumber * secondNumber);
+
+console.log('Divide Numbers', firstNumber / secondNumber);
+
+console.log('Modulus Numbers = ', firstNumber % secondNumber);
+
+console.log('Modulus Numbers = ', firstNumber % secondNumber);
+
+console.log('Greater than two Numbers = ', firstNumber > secondNumber);
+
+console.log('Less than two Numbers = ', firstNumber < secondNumber);
+
+console.log('Greater than or equal two Numbers = ', firstNumber >= secondNumber);
+
+console.log('Less than or equal two Numbers = ', firstNumber <= secondNumber);
 
 /**
- * Strings and numbers
+ * Infinity
  */
-console.log('\nSTRINGS AND NUMBERS');
+console.log('Divide by zero above zero = ', 100 / 0); // Infinity
 
-console.log('Sum number and string = ', 5 + 10 + firstString);
-console.log('Sum string and number = ', firstString + 5 + 10);
+console.log('Divide by zero above zero = ', 100 / +0); // +Infinity
 
-/**
- * Strings and booleans
- */
-console.log('\nSTRINGS AND BOOLEANS');
+console.log('Divide by zero below zero = ', 100 / -0); // -Infinity
 
-console.log('Sum number and string = ', true + true + firstString);
-console.log('Sum string and number = ', firstString + true + true);
+console.log('Infinity equality = ', +Infinity === Infinity);
 
-/**
- * Numbers and booleans
- */
-console.log('\nSTRINGS AND BOOLEANS');
-
-console.log('Sum number and string = ', true + true + 10);
-console.log('Sum string and number = ', 10 + true + false);
-
-/**
- * Strings in boolean\logical context
- */
-console.log('\nSTRINGS IN LOGICAL CONTEXT');
-
-console.log('Not empty string is true = ', !!firstString);
-console.log('Empty string in false = ', !!'');
-
-
-
+console.log('Infinity equality = ', +Infinity === -Infinity);

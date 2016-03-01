@@ -6,24 +6,27 @@ console.log('\nSTRINGS');
 var firstString  = "Hello ",
     secondString = 'world';
 
+console.log('\nSTRINGS IN NUMERICAL CONTEXT');
 /**
  * Operator + will concat strings
  */
-var sumStrings = firstString + secondString;
-console.log('sumStrings', sumStrings);
+console.log('Sum strings = ', firstString + secondString);
 
 /**
  * Other arithmetical operators will produce NaN
  */
-var subtractString = firstString - secondString;
-console.log('subtractString', subtractString);
+console.log('Subtract strings = ', firstString - secondString);
 
-var multiplyStrings = firstString * secondString;
-console.log('multiplyStrings', multiplyStrings);
+console.log('Multiply strings = ', firstString * secondString);
 
-var divideStrings = firstString / secondString;
-console.log('divideStrings', divideStrings );
+console.log('Divide strings = ',  firstString / secondString);
 
-var modulusStrings = firstString % secondString;
-console.log('modulusStrings', modulusStrings);
+console.log('Modulus strings = ', firstString % secondString);
 
+console.log('Greater than two strings = ',  firstString > secondString);
+
+console.log('Less than two strings = ', firstString < secondString);
+
+console.log('Greater than or equal two strings = ', '811' >= '812'); // Compare by charcode
+
+console.log('Less than or equal two strings = ', '811' <= '812'); // Compare by charcode
