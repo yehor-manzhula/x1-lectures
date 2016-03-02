@@ -8,25 +8,25 @@ You need to install node.js on your environment:
 * Install nvm (Node Version Manager) this thing allows you to have multiple node.js
 versions at a time and switch between them from project to project
 
-    ```sh
-    $  wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
-    ```
+```sh
+$  wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+```
 * Install node.js using nvm
-    ```sh
-    $ nvm install 5.6.0
-    ```
+```sh
+$ nvm install 5.6.0
+```
 * Make version node.js 5.6.0 default (not necessary)
-    ```sh
-    $ nvm alias default 5.6.0
-    ```
+```sh
+$ nvm alias default 5.6.0
+```
 * Go to examples folder and install all dependencies with npm (node package manager) that installed with node.js
-    ```sh
-    $ npm install
-    ```
+```sh
+$ npm install
+```
 * Run web server using gulp plugin
-    ```sh
-    $ gulp serve
-    ```
+```sh
+$ gulp serve
+```
 
 ##### Windows
 * Download the Windows installer from the [Nodes.js web site](http://nodejs.org/).
