@@ -158,7 +158,7 @@ switch (statusCode) {
     case 301:
     case 302:
     case 302: {
-        responseText += 'MOVED_TEMPORARILY';
+        responseText += 'MOVED_TEMPORARILY ';
     }
 
     case 303:
