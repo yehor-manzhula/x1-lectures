@@ -27,7 +27,7 @@ var otherText = "Text isn't long 10\\8";
  * but it is was not supported in all browsers
  */
 var multilineText = "This is first line\
-        this is second line";
+    this is second line";
 
 /**
  * So it is better to use just string concatenation
@@ -40,7 +40,7 @@ var multilineText = "This is first line\
  * better but slower
  */
 var otherMultilineText = "This is first line" +
-        "this is second line";
+        "this is second line"; // new String("This is first line this is second line");
 
 /**
  * Or using constructor function
@@ -110,7 +110,7 @@ console.log('Let us get last character = ', someText[someText.length - 1]);
  */
 
 console.log('Let us search for t', 'text to search'.indexOf('t')); // 0
-console.log('Let us search for t from second position', 'text to search'.indexOf('t', 1)); // 4
+console.log('Let us search for t from second position', 'text to search'.indexOf('t', 1)); // 3
 
 /**
  * So usually recommend to cast string to array if you want it to be
@@ -122,7 +122,7 @@ console.log('Let us convert some string to array = ', 'I want to become an array
 /**
  * Split method usually is used to split string by some separator character
  */
-console.log('For example by comma ', 'There should be at least one comma, otherwise example will not work'.split('.'));
+console.log('For example by comma ', 'There should be at least one comma, otherwise example will not work'.split(','));
 console.log('Or by space', 'There should be at least one comma, otherwise example will not work'.split(' '));
 
 /**
