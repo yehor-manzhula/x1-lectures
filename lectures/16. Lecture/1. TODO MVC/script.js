@@ -1,14 +1,16 @@
 'use strict';
-window.addEventListener('load', onWindowLoad);
 
-function onWindowLoad() {
-    var todoFormt = new TodoMVC('#todo-template');
-    TodoMVC.prototype = {};
+// All including jQuery loaded
+$(document).ready(function () {
+});
+
+// Shorthand
+$(function () {
 
     var TodoMVC = {
         todoList: [],
 
-        addTodo: function(todoText) {
+        addTodo: function (todoText) {
 
             var todo = {
                 text: todoText,
@@ -23,15 +25,15 @@ function onWindowLoad() {
             this.render();
         },
 
-        removeTodo: function(index) {
+        removeTodo: function (index) {
             this.todoList.splice(index, 1);
         },
 
-        clearCompleted: function() {
+        clearCompleted: function () {
             console.log('Should clear all completed items');
 
             // TODO: Optimize multiple render call
-            this.todoList.forEach(function(todo, index, array) {
+            this.todoList.forEach(function (todo, index, array) {
                 if (todo.done) {
                     this.removeTodo(index);
                 }
@@ -40,11 +42,31 @@ function onWindowLoad() {
             this.render();
         },
 
-        render: function() {
+        init: function() {
+            var todoListContainer = $('#todo-list');
+
+            // Delegate event
+            todoListContainer.on('click', 'span', function(event) {
+                console.log('THIS = ', this === event.currentTarget);
+
+                console.log('delegate on = ', event.delegateTarget);
+                console.log('target = ', event.target);
+
+                $(this).parent().remove();
+
+                //this.removeTodo(index);
+                //this.render();
+            });
+        },
+
+        render: function () {
+
             // this === TodoMVC
-            var todoListContainer = document.querySelector('#todo-list');
+            var todoListContainer = $('#todo-list');
+
+            // Here is the bug
             // Clear the list
-            todoListContainer.innerHTML = '';
+            todoListContainer.html('');
 
             //[{
             //      text: 'Test 1',
@@ -57,52 +79,42 @@ function onWindowLoad() {
             //      done: false
             // }]
 
-            this.todoList.forEach(function(todo, index, todoList) {
+            this.todoList.forEach(function (todo, index, todoList) {
                 // todo = {
                 //  text: 'Test 1',
                 //  done: false
                 // }
 
                 // <li>First one</li>
-                var todoElement = document.createElement('li');
-                todoElement.innerHTML = todo.text;
+                var todoElement = $('<li>' + todo.text + '</li>');
 
                 if (todo.done) {
                     todoElement.className += ' done';
                 }
 
-                var todoDoneElement = document.createElement('input');
-                todoDoneElement.type = 'checkbox';
-                todoDoneElement.checked = todo.done; // true/false
+                var todoDoneElement = $('<input type="checkbox">');
+                todoDoneElement.prop('checked', todo.done); // true/false
 
-                todoDoneElement.addEventListener('change', (function() {
+                todoDoneElement.on('change', (function () {
                     todo.done = todoDoneElement.checked;
                     this.render();
                 }).bind(this));
 
                 // <span>x</span>
-                var closeSpan = document.createElement('span');
-                closeSpan.innerHTML = '×';
-
-                closeSpan.addEventListener('click', (function() {
-                    closeSpan.parentNode.remove();
-
-                    this.removeTodo(index);
-                    this.render();
-                }).bind(this));
+                var closeSpan = $('<span><b>×</b></span>');
 
                 // <li>First one<span>x</span></li>
-                todoElement.appendChild(todoDoneElement);
+                todoElement.append(todoDoneElement);
 
                 // <li>First one<span>x</span></li>
-                todoElement.appendChild(closeSpan);
+                todoElement.append(closeSpan);
 
                 // <ul><li>First one<span>x</span></li></ul>
-                todoListContainer.appendChild(todoElement);
+                todoListContainer.append(todoElement);
             }, this);
 
-            var activeItemsLeft = document.querySelector('#active-items-left');
-            activeItemsLeft.innerHTML = this.todoList.filter(function(todo) {
+            var activeItemsLeft = $('#active-items-left');
+            activeItemsLeft.innerHTML = this.todoList.filter(function (todo) {
                 return !todo.done;
             }).length;
         }
@@ -112,7 +124,7 @@ function onWindowLoad() {
     window.TodoMVC = TodoMVC;
 
     // Input
-    document.querySelector('#todo-text').addEventListener('keyup', function(event) {
+    $('#todo-text').on('keyup', function (event) {
         if (event.keyCode === 13) {
             TodoMVC.addTodo(this.value);
             this.value = '';
@@ -120,7 +132,9 @@ function onWindowLoad() {
     });
 
     // Clear all completed button
-    document.querySelector('#clear-completed').addEventListener('click', function() {
-       TodoMVC.clearCompleted();
+    $('#clear-completed').on('click', function () {
+        TodoMVC.clearCompleted();
     });
-}
+
+    TodoMVC.init();
+});
