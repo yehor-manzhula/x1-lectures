@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO MVC using all we already know</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        body {
+            text-align: center;
+            font-size: 32px;
+            color: greenyellow;
+        }
+
+        a, b {
+            color: greenyellow;
+        }
+
+        ul li span {
+            color: lightcoral;
+            margin-left: 5px;
+        }
+
+        ul li span:hover {
+            color: lightgreen;
+            margin-left: 5px;
+        }
+
+        ul li.item-done {
+            text-decoration: line-through;
+        }
+    </style>
+    <script src="jquery-3.1.0.min.js"></script>
+    <script src="mustache.js"></script>
+    <script src="script.js"></script>
+    <script src="templates.js"></script>
+
+    <script id="todo-template" type="x-tmpl-mustache">
+        <ul>
+        {{#todos}}
+        <li data-id="{{id}}" class="item-done">
+            {{text}}
+
+            {{#done}}
+               <input type="checkbox" checked/>
+            {{/done}}
+
+            {{^done}}
+               <input type="checkbox"/>
+            {{/done}}
+
+            <span><b>×</b></span>
+        </li>
+        {{/todos}}
+        </ul>
+    </script>
+
+    <script id="my-template" type="todo-mvc-template">
+        <ul>
+            {{forEach}}
+            <li>{{data}}
+                <span>
+                    <a href="http://google.com">To google</a>
+                </span>
+            </li>
+            {{/forEach}}
+        </ul>
+    </script>
+</head>
+<body>
+    <input id="todo-text" placeholder="TODO" value=""/>
+    <!--// Click, change -->
+    <div id="todo-list"></div>
+    <div>
+        <span id="active-items-left">0</span> Items left
+    </div>
+    <div>
+       <button id="clear-completed">Clear completed</button>
+    </div>
+
+
+</body>
+</html>
